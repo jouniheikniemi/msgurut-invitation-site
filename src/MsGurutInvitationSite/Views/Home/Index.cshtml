@@ -1,0 +1,37 @@
+﻿@model MsGurutInvitationSite.Controllers.FrontPageViewModel
+@{
+    ViewData["Title"] = "MSgurut";
+}
+
+<div class="row">
+	<h1>Microsoft-gurut</h1>
+</div>
+
+<div class="row">
+	<div class="col-md-5 intro">
+		<p>MSgurut on Slack-yhteisö suomalaisille Microsoft-teknologiasta kiinnostuneille kehittäjille, ylläpitäjille ja tehokäyttäjille. Kysy kysymyksiä, esitä mielipiteitä ja pohdi maailman menoa! <a href="http://www.slack.com/">Slack</a> on chat-palvelu, jonka kautta voit käydä reaaliaikaista keskustelua haluamiesi yhteisöjen kanssa.</p>
+		<p>Liittyäksesi yhteisöön tarvitset kutsun Slack-verkostoon. Saat sen syöttämällä sähköpostiosoitteesi seuraavaan lomakkeeseen. Kutsun pitäisi tupsahtaa postilaatikkoosi parissa minuutissa.</p>
+	</div>
+	<div class="col-md-5 intro">
+		<p>MSgurut is a Slack community for (mostly) Finnish developers, admins and power users in the field of Microsoft technology. Ask questions, voice your opinion and join the crowd in wondering what's next! <a href="http://www.slack.com/">Slack</a> is a chat application that enables real-time communications across communities.</p>
+		<p>To join the community, you need a Slack network invitation. Enter your email address below to receive one. You should get the invitation immediately.</p>
+	</div>
+</div>
+
+@if (Model.Message != null) {
+	<div class="row message @(Model.Success ? "message-success" : "message-error")">
+		@Model.Message
+	</div>
+}
+
+<div class="row">
+
+	<div class="col-md-10 emailform">
+		<form action="/" method="POST">
+			<input type="email" name="email" placeholder="you@example.com" />
+			<input type="submit" value="&nbsp;&gt;&nbsp;" />
+		</form>
+	</div>
+
+	<br clear="all"/>
+</div>
